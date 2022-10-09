@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs</title>
+</head>
+<body>
+    <div class="flex-content" style="display: flex">
+        <div id="div-1" style="width: 200px; height: 200px; background-color: gray"></div>
+        <div id="div-2" style="width: 200px; height: 200px; background-color: pink"></div>
+        <div id="div-3" style="width: 200px; height: 200px; background-color: rebeccapurple"></div>
+        <div id="div-4" style="width: 200px; height: 200px; background-color: cyan"></div>
+    </div>
+    <script>
+        document.addEventListener('keydown', function (event) {
+                if (event.key === 'a') {
+                    selectedColor = 'green'
+                } else if (event.key === 's') {
+                    selectedColor = 'yellow'
+                } else if (event.key === 'd') {
+                    selectedColor  = 'red'
+                } else {
+                    alert("Debe presionar en su teclado la tecla 'A', 'S' ó 'D' para ejecutar el script deseado.")
+                }
+        })
+
+        function setBkgColor(elementId, bkgColor){
+            ele = document.querySelector(elementId)
+            ele.style.backgroundColor = bkgColor
+        }
+
+        let contenedor = document.querySelector(".flex-content")
+
+        contenedor.addEventListener("click", function(event){
+            let id = '#' + event.target.id
+            setBkgColor(id, selectedColor)
+        })
+       
+       
+    </script>
+</body>
+</html>
